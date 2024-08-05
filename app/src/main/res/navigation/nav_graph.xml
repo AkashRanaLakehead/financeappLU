@@ -1,0 +1,78 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/mainFragment">
+
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="akash.rana.financeapp.fragments.MainFragment"
+        android:label="MainFragment" >
+        <action
+            android:id="@+id/action_mainFragment_to_budgetFragment"
+            app:destination="@id/budgetFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_incomeFragment"
+            app:destination="@id/incomeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_expensesFragment"
+            app:destination="@id/expensesFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_addTransactionBottomSheetFragment"
+            app:destination="@id/addTransactionBottomSheetFragment" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/budgetFragment"
+        android:name="akash.rana.financeapp.fragments.BudgetFragment"
+        android:label="BudgetFragment" />
+
+    <fragment
+        android:id="@+id/incomeFragment"
+        android:name="akash.rana.financeapp.fragments.IncomeFragment"
+        android:label="IncomeFragment" />
+
+    <fragment
+        android:id="@+id/expensesFragment"
+        android:name="akash.rana.financeapp.fragments.ExpenseFragment"
+        android:label="ExpensesFragment" />
+
+    <fragment
+        android:id="@+id/addIncomeFragment"
+        android:name="akash.rana.financeapp.fragments.add.AddIncomeFragment"
+        android:label="AddIncomeFragment">
+        <action
+            android:id="@+id/action_addIncomeFragment_to_mainFragment"
+            app:destination="@id/mainFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addExpenseFragment"
+        android:name="akash.rana.financeapp.fragments.add.AddExpenseFragment"
+        android:label="AddExpenseFragment" >
+        <action
+            android:id="@+id/action_addExpenseFragment_to_mainFragment"
+            app:destination="@id/mainFragment"/>
+    </fragment>
+
+    <fragment
+        android:id="@+id/addTransactionBottomSheetFragment"
+        android:name="akash.rana.financeapp.fragments.AddTransactionBottomSheetFragment"
+        android:label="BottomSheetFragment" >
+        <action
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addIncomeFragment"
+            app:destination="@id/addIncomeFragment" />
+        <action
+            android:id="@+id/action_addTransactionBottomSheetFragment_to_addExpenseFragment"
+            app:destination="@id/addExpenseFragment" />
+    </fragment>
+
+
+</navigation>

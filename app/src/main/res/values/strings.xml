@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Finance App</string>
+    <string name="main">Main</string>
+    <string name="splash_tagline">Maintain your Finance.</string>
+    <string name="ic_budget">Budget</string>
+    <string name="income">Income</string>
+    <string name="expenses">Expenses</string>
+    <string name="add_income">Add Income</string>
+    <string name="add_expense">Add Expense</string>
+    <string name="description">Description</string>
+    <string name="category">Category</string>
+    <string name="amount">Amount</string>
+    <string name="notification_channel_name">Notifications</string>
+    <string name="notification_channel_description">Notification Description</string>
+
+    <string name="balance_format">Balance: %.2f Dollor</string>
+    <string name="transaction_type">Transaction Type</string>
+    <string name="date">Date</string>
+    <string name="add_transaction">Add Transaction</string>
+    <string name="total_incomes">Total Incomes for Period</string>
+    <string name="total_expenses">Total Expenses for Period</string>
+    <string name="income_count">Number of Incomes</string>
+    <string name="expense_count">Number of Expenses</string>
+    <string name="delete_transaction">Delete Transaction</string>
+    <string name="delete_all_transaction">Delete All Transactions</string>
+
+    <string name="delete_all_transactions_title">Delete All Transactions</string>
+    <string name="delete_all_transactions_message">Do you really want to delete all transactions?</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+</resources>
