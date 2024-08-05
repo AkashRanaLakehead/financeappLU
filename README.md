@@ -1,5 +1,11 @@
 ****Finance Application****
-
+Team Members:
+1) Akash Rana (1227346)
+2) Rilwan Mohamed (1213284)
+3) Shalin Patel (122809)
+4) Raj Patel (1216690)
+5) Abdelrahman Elkinani (1221365)
+   
 steps to run:
 1) Clone the repo.
 2) Sync gradle file
