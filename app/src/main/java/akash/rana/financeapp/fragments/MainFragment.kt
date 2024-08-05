@@ -12,15 +12,18 @@ import androidx.lifecycle.lifecycleScope
 import kotlinx.coroutines.launch
 import org.koin.androidx.viewmodel.ext.android.sharedViewModel
 import akash.rana.financeapp.R
+import akash.rana.financeapp.RefreshDatabaseService
 import akash.rana.financeapp.databinding.FragmentMainBinding
 import akash.rana.financeapp.models.Category
 import akash.rana.financeapp.models.Transaction
 import akash.rana.financeapp.models.TransactionType
 import akash.rana.financeapp.viewmodels.TransactionViewModel
+import android.content.Intent
 import java.util.*
 import com.github.mikephil.charting.data.PieData
 import com.github.mikephil.charting.data.PieDataSet
 import com.github.mikephil.charting.data.PieEntry
+import com.google.android.material.snackbar.Snackbar
 
 class MainFragment : Fragment(){
     private lateinit var binding: FragmentMainBinding
@@ -39,10 +42,21 @@ class MainFragment : Fragment(){
         binding.deleteAllTransactionButton.setOnClickListener {
             deleteAllTransaction()
         }
+
+        binding.refreshButton.setOnClickListener {
+            refreshDatabase()
+            Snackbar.make(binding.root, "Data Refreshed!", Snackbar.LENGTH_SHORT).show()
+        }
+
         addInitialTransactionIfEmpty()
         setupObservers()
         setupPieChart()
         return binding.root
+    }
+
+    private fun refreshDatabase() {
+        val intent = Intent(requireContext(), RefreshDatabaseService::class.java)
+        requireContext().startService(intent)
     }
 
     private fun showAddTransactionBottomSheet(transactionType: TransactionType) {
@@ -157,7 +171,7 @@ class MainFragment : Fragment(){
             .setPositiveButton(getString(R.string.yes)) { _, _ ->
                 lifecycleScope.launch {
                     viewModel.deleteAllTransactions()
-                   }
+                }
                 addInitialTransactionIfEmpty()
             }
             .setNegativeButton(getString(R.string.no), null)

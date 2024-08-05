@@ -96,6 +96,11 @@ class TransactionViewModel(
         loadExpenseTransactions()
     }
 
+    fun refreshData() {
+        // This method triggers the data refresh logic
+        loadAllTransactions()
+    }
+
     // Metody pro Income
 
     init {
